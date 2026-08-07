@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Raleway', ui-sans-serif, system-ui, sans-serif;
+
+    --color-gold: #c6b088;
+    --color-gold-light: #d4c4a4;
+    --color-ink: #1a1f27;
+}
+
+@layer utilities {
+    .animate-fade-up {
+        animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .animate-ken-burns {
+        animation: ken-burns 28s ease-out both;
+    }
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ken-burns {
+    from {
+        transform: scale(1.05);
+    }
+
+    to {
+        transform: scale(1.12);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-fade-up,
+    .animate-ken-burns {
+        animation: none;
+    }
+}
